@@ -16,6 +16,7 @@ Playwright records the live site at 60 fps with a controlled clock, OpenCV finds
 ![Claude Code skill](https://img.shields.io/badge/Claude_Code-skill-D97757?style=flat-square)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-0B1014?style=flat-square)
 
 <table>
   <tr>
@@ -204,3 +205,7 @@ The full prompts for both included angles (a low three-quarter shot and a straig
 - **Keep the laptop off the site's text.** If a site puts headings where the laptop overlaps the monitor, use the mirrored backgrounds.
 - **Frames are big:** about 1.2 GB per screen per 18 s. They're gitignored, and re-capturing takes about a minute.
 - A site that scrubs a real `<video>` element on scroll needs a small recorder change; see [Known limitations](docs/PLAYBOOK.md#10-known-limitations--gotchas).
+
+## License
+
+[MIT](LICENSE). The example rooms and preview media are included for demonstration; the two example sites are fictional showcase brands.
