@@ -7,9 +7,11 @@ import os, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cv2
 import numpy as np
-from composite import detect_screens, fit_canvas
+import composite
+from composite import detect_screens
 
-bg = fit_canvas(cv2.imread(sys.argv[1], cv2.IMREAD_COLOR))
+bg = cv2.imread(sys.argv[1], cv2.IMREAD_COLOR)
+composite.W, composite.H = bg.shape[1], bg.shape[0]  # measure at the image's own size (works for landscape too)
 screens, _ = detect_screens(bg)
 for s, label, width in zip(screens, ['monitor', 'laptop'], [1440, 1280]):
     tl, tr, br, bl = s['quad']

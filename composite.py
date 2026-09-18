@@ -223,6 +223,7 @@ def render_frame(angle, frame_lists, i, glow_amt):
 
 
 def main():
+    global W, H, OUT_W, OUT_H
     ap = argparse.ArgumentParser()
     ap.add_argument('--bg', help='single background (one continuous shot)')
     ap.add_argument('--edit', help='edit JSON: {"angles": {name: image}, "shots": [{"angle", "until", "zoom", "focus"}]}')
@@ -237,6 +238,8 @@ def main():
     ap.add_argument('--crf', type=int, default=10, help='x264 quality (lower = higher bitrate)')
     ap.add_argument('--ig30', action='store_true', help='also write a motion-blurred 30fps cut')
     ap.add_argument('--swap', action='store_true', help='swap which screen gets which recording')
+    ap.add_argument('--native', action='store_true',
+                    help="keep the background's own size and aspect (banners, landscape stills) instead of the 9:16 reel canvas")
     ap.add_argument('--detect-only', action='store_true')
     ap.add_argument('--still', type=int, nargs='*', help='write composited frame PNGs at these indices instead of a video')
     args = ap.parse_args()
@@ -249,6 +252,11 @@ def main():
         shots = [{'angle': 'A', 'zoom': args.zoom, 'ease': 'smooth'}]
     else:
         sys.exit('need --bg or --edit')
+
+    if args.native:  # canvas = the (first) background's own pixels, output at the same size
+        h, w = cv2.imread(next(iter(angle_paths.values()))).shape[:2]
+        W, H = w - w % 2, h - h % 2
+        OUT_W, OUT_H = W, H
 
     used = sorted({s['angle'] for s in shots})
     detected = {name: detect_angle(name, angle_paths[name], args.swap) for name in used}

@@ -226,6 +226,14 @@ ffmpeg -y -loglevel error -i output/site-reel.mp4 -vf "select='eq(n\,10)+eq(n\,4
 ```
 Single-background mode (one continuous shot, smoothstep push-in 1.00→1.08): `--bg backgrounds/env1.webp` instead of `--edit`, optional `--zoom 1.0 1.08`.
 
+**Stills at any aspect (banners, thumbnails, landscape posts):** add `--native` so the canvas is the image itself, `--zoom 1 1` for no push-in, and pick the frame with `--still N`. Match each screen's recording to its shape (`tools/screen_ratios.py` works on landscape images too). The repo banner:
+```bash
+.venv/bin/python composite.py --bg docs/media/banner-plate.webp --native --zoom 1 1 \
+  --monitor frames/monitor --laptop frames/rae-laptop --out debug/banner.mp4 --still 30   # Vauclair 16:9 on the monitor, Rae & Thorburn on the laptop
+ffmpeg -i debug/still30.png -q:v 2 docs/media/banner.jpg
+ffmpeg -i debug/still30.png -vf "scale=1280:-2,crop=1280:640" -q:v 2 docs/media/social-preview.jpg   # GitHub social preview
+```
+
 ### All flags
 | Flag | Default | Meaning |
 |---|---|---|
@@ -240,6 +248,7 @@ Single-background mode (one continuous shot, smoothstep push-in 1.00→1.08): `-
 | `--crf` | 10 | x264 quality; lower = higher bitrate |
 | `--ig30` | off | Also write `*-30fps.mp4` (frame-pair blend = natural motion blur) |
 | `--swap` | off | Swap which screen gets which recording |
+| `--native` | off | Use the background's own size/aspect instead of the 9:16 canvas (banners, landscape stills); output is the same size as the image |
 | `--detect-only` | off | Only write detection overlays |
 | `--still N [N…]` | — | Write `debug/still<N>.png` instead of a video |
 

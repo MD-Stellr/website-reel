@@ -1,6 +1,10 @@
 <div align="center">
 
-# Website Reel
+<img src="docs/media/banner.jpg" alt="Website Reel — any website, turned into a cinematic reel" width="100%">
+
+<sub>The banner is made by the tool itself: an AI plate (<code>docs/media/banner-plate.webp</code>) with two real sites composited onto its screens via <code>composite.py --native</code>.</sub>
+
+<br><br>
 
 **Turn any website into a cinematic 9:16 reel: recorded frame by frame, composited into an AI-generated room.**
 
@@ -175,6 +179,7 @@ The full prompts for both included angles (a low three-quarter shot and a straig
 | `--crf` | 10 | x264 quality (lower = higher bitrate) |
 | `--ig30` | off | also write a motion-blurred 30 fps version |
 | `--swap` | off | swap which recording goes on which screen |
+| `--native` | off | keep the background's own size and shape (banners, landscape stills) instead of the 9:16 reel canvas |
 | `--detect-only` | off | write detection overlays only |
 | `--still N …` | — | write preview PNGs to `debug/` instead of a video |
 </details>
