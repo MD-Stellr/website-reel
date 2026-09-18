@@ -1,0 +1,9 @@
+{
+  "name": "website-reel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Record websites frame by frame and composite them into AI-generated rooms as 1080x1920 60fps Instagram Reels.",
+  "dependencies": {
+    "playwright": "^1.63.0"
+  }
+}

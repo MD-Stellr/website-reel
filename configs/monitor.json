@@ -1,0 +1,7 @@
+{
+  "url": "https://vauclair-alpha.vercel.app/",
+  "out": "frames/monitor",
+  "width": 1440, "height": 810, "dpr": 2, "fps": 60, "duration": 14.5,
+  "hideSelectors": [".pointer-events-none.fixed.z-\\[100\\]"],
+  "keyframes": [[0, 0], [1.0, 0], [3.0, 900], [3.6, 900], [5.4, 1955], [5.7, 1955], [11.1, 4944], [11.5, 4944], [13.3, 5754], [14.5, 5754]]
+}

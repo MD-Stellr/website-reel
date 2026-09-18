@@ -1,0 +1,8 @@
+{
+  "url": "https://rae-thorburn.vercel.app/",
+  "out": "frames/rae-monitor",
+  "width": 1440, "height": 920, "dpr": 2, "fps": 60, "duration": 18,
+  "settleMs": 6000, "interp": "smooth",
+  "hideSelectors": [".pointer-events-none.fixed.z-\\[100\\]"],
+  "keyframes": [[0, 0], [0.8, 250], [9.4, 3680], [11.2, 4560], [12.8, 4800], [14.0, 5323], [17.2, 6447], [18.0, 6700]]
+}

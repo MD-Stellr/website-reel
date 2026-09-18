@@ -1,0 +1,11 @@
+{
+  "angles": {
+    "A": "backgrounds/env1-flip.png",
+    "B": "backgrounds/env1-angleB-flip.png"
+  },
+  "shots": [
+    {"angle": "B", "until": 11.4, "zoom": [1.00, 1.08], "focus": "both"},
+    {"angle": "A", "until": 15.0, "zoom": [1.02, 1.07], "focus": "both"},
+    {"angle": "B",                "zoom": [1.06, 1.12], "focus": "both"}
+  ]
+}

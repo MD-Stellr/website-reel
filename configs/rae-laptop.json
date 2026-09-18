@@ -1,0 +1,8 @@
+{
+  "url": "https://rae-thorburn.vercel.app/houses/dingle-burn",
+  "out": "frames/rae-laptop",
+  "width": 1280, "height": 864, "dpr": 2, "fps": 60, "duration": 18,
+  "settleMs": 6000, "interp": "smooth",
+  "hideSelectors": [".pointer-events-none.fixed.z-\\[100\\]"],
+  "keyframes": [[0, 0], [1.0, 40], [5.0, 900], [8.5, 1500], [13.5, 3000], [18.0, 3713]]
+}

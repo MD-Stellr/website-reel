@@ -1,0 +1,13 @@
+# heavy / generated
+frames/
+output/
+debug/
+inspect/
+test/
+inspect-top.png
+# environments
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

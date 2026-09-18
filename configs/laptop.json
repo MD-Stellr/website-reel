@@ -1,0 +1,7 @@
+{
+  "url": "https://vauclair-alpha.vercel.app/collection/vesperale",
+  "out": "frames/laptop",
+  "width": 1280, "height": 800, "dpr": 2, "fps": 60, "duration": 14.5,
+  "hideSelectors": [".pointer-events-none.fixed.z-\\[100\\]"],
+  "keyframes": [[0, 0], [2.0, 0], [4.2, 760], [5.6, 760], [8.0, 1535], [9.6, 1535], [11.8, 2344], [14.5, 2344]]
+}
